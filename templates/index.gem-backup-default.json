@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "strip": {
+      "type": "strip",
+      "settings": {}
+    },
+    "intro": {
+      "type": "intro",
+      "settings": {}
+    },
+    "features": {
+      "type": "features",
+      "settings": {}
+    },
+    "promo_a": {
+      "type": "promo-grid",
+      "settings": {}
+    },
+    "promo_b": {
+      "type": "promo-grid",
+      "settings": {}
+    },
+    "promo_c": {
+      "type": "promo-grid",
+      "settings": {}
+    },
+    "promo_d": {
+      "type": "promo-grid",
+      "settings": {}
+    },
+    "story": {
+      "type": "story",
+      "settings": {}
+    },
+    "newsband": {
+      "type": "newsband",
+      "settings": {}
+    },
+    "fabrics": {
+      "type": "fabrics",
+      "settings": {}
+    },
+    "journal": {
+      "type": "journal",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "strip",
+    "intro",
+    "features",
+    "promo_a",
+    "promo_b",
+    "promo_c",
+    "promo_d",
+    "story",
+    "newsband",
+    "fabrics",
+    "journal"
+  ]
+}
