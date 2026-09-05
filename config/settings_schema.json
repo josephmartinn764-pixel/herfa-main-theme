@@ -1,1 +1,1 @@
-[]
+{"name":"Theme settings","settings":[{"type":"image_picker","id":"logo","label":"Logo"},{"type":"text","id":"heading_font","label":"Heading font","default":"Marcellus"},{"type":"text","id":"body_font","label":"Body font","default":"Jost"}]}
