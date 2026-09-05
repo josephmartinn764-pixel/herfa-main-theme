@@ -1,11 +1,17 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "settings": {}
-    }
+    "hero": { "type": "hero", "settings": {} },
+    "strip": { "type": "strip", "settings": {} },
+    "intro": { "type": "intro", "settings": {} },
+    "features": { "type": "features", "settings": {} },
+    "promo_a": { "type": "promo-grid", "settings": {} },
+    "promo_b": { "type": "promo-grid", "settings": {} },
+    "promo_c": { "type": "promo-grid", "settings": {} },
+    "promo_d": { "type": "promo-grid", "settings": {} },
+    "story": { "type": "story", "settings": {} },
+    "newsband": { "type": "newsband", "settings": {} },
+    "fabrics": { "type": "fabrics", "settings": {} },
+    "journal": { "type": "journal", "settings": {} }
   },
-  "order": [
-    "hero"
-  ]
+  "order": ["hero","strip","intro","features","promo_a","promo_b","promo_c","promo_d","story","newsband","fabrics","journal"]
 }

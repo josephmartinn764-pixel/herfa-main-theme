@@ -6,27 +6,50 @@
           <div class="thumb" style="background-image:url({{ image | img_url: '1024x' }})"></div>
         {% endfor %}
       </div>
+
       <div class="main-img">
         {% if product.featured_image %}
           <img src="{{ product.featured_image | img_url: '1024x' }}" alt="{{ product.title }}">
         {% endif %}
       </div>
+
       <div class="info">
         <h1 class="serif">{{ product.title }}</h1>
         <div class="price">{{ product.price | money }}</div>
-        <div class="desc">{{ product.description }}</div>
+        <div class="desc">{{ product.description | strip_html }}</div>
 
         {% if product.options.size > 0 %}
-          <div class="opt-label">Options</div>
-          <form method="post" action="/cart/add">
-            <select name="id">
-              {% for variant in product.variants %}
-                <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-              {% endfor %}
-            </select>
-            <button type="submit" class="btn-bag">Add to bag</button>
-          </form>
+          <div class="opt-label">Color</div>
+          <div class="colors">
+            {% for option in product.options_with_values %}
+              {% if option.name contains 'Color' or option.name contains 'Colour' %}
+                {% for value in option.values %}
+                  <label class="swatch" title="{{ value }}">
+                    <input type="radio" name="option-{{ forloop.index0 }}" value="{{ value }}" {% if forloop.first %}checked{% endif %} style="display:none;">
+                    <span aria-hidden="true">{{ value }}</span>
+                  </label>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
         {% endif %}
+
+        <form method="post" action="/cart/add">
+          <select name="id" style="display:none;">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+          <button class="btn-bag" type="submit">Add to bag</button>
+        </form>
+
+        <a href="/account/login" class="btn-wish">&#9825; Add to wishlist</a>
+
+        <div class="accordion">
+          <div class="acc-item">Details <span>+</span></div>
+          <div class="acc-item">Fabric & care <span>+</span></div>
+          <div class="acc-item">Shipping & returns <span>+</span></div>
+        </div>
       </div>
     </div>
   </div>

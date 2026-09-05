@@ -1,0 +1,29 @@
+<section class="cart-section">
+  <div class="wrap">
+    <h2>Your cart</h2>
+    {% if cart.item_count == 0 %}
+      <p>Your cart is empty.</p>
+    {% else %}
+      <form action="/cart" method="post">
+        <table>
+          <thead><tr><th>Product</th><th>Qty</th><th>Price</th></tr></thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>{{ item.product.title }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.line_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="cart-totals">Total: {{ cart.total_price | money }}</div>
+        <a href="/checkout" class="btn btn-solid">Checkout</a>
+      </form>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{"name":"Cart section","settings":[],"presets":[{"name":"Cart"}]}
+{% endschema %}
