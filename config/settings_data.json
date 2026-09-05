@@ -1,1 +1,20 @@
-{"current": {"name": "Herfa Main Theme", "settings": {"logo": "", "heading_font": "Marcellus", "body_font": "Jost"}}, "presets": []}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "name": "Herfa Main Theme",
+    "settings": {
+      "logo": "",
+      "heading_font": "Marcellus",
+      "body_font": "Jost"
+    }
+  },
+  "presets": []
+}
