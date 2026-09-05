@@ -1,9 +1,10 @@
-<header>
+<header id="site-header">
   <div class="nav">
     <div class="logo-block">
       {% render 'logo' %}
     </div>
-    <nav class="nav-links" role="navigation" aria-label="Main menu">
+
+    <nav id="site-nav" class="nav-center" role="navigation" aria-label="Main menu">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/collections/all">Shop</a></li>
@@ -12,9 +13,12 @@
         <li><a href="/blogs/news">Journal</a></li>
       </ul>
     </nav>
+
     <div class="nav-icons">
-      <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
-      <span class="icon">&#9906;</span>
+      <a href="/search" class="icon-link" aria-label="Search">🔍</a>
+      <a href="/account" class="icon-link" aria-label="Account">👤</a>
+      <a href="/cart" class="icon-link cart-link" aria-label="Cart">🛍 <span class="cart-count">{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}</span></a>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>
     </div>
   </div>
 </header>
