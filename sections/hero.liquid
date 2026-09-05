@@ -1,13 +1,12 @@
-<section class="hero-section">
-  <div class="wrap">
-    <div class="hero-copy">
-      <h1>{{ section.settings.heading }}</h1>
-      <p>{{ section.settings.subheading }}</p>
-      {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
-        <a href="{{ section.settings.cta_link }}" class="btn">{{ section.settings.cta_text }}</a>
-      {% endif %}
-    </div>
+<section class="hero">
+  <div class="hero-copy">
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.subheading }}</p>
+    {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+      <a href="{{ section.settings.cta_link }}" class="btn btn-solid">{{ section.settings.cta_text }}</a>
+    {% endif %}
   </div>
+  <div class="hero-img"></div>
 </section>
 
 {% schema %}
