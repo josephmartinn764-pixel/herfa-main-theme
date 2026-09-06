@@ -1,13 +1,44 @@
 <section class="promo-grid">
-  <div class="promo-cell light">
-    <span class="eyebrow">New in</span>
-    <h2 class="serif">Summer essentials</h2>
-    <div class="rule"></div>
-    <a href="/collections/new-in" class="link-arrow">Discover now →</a>
-  </div>
-  <div class="promo-cell imgcell" style="background:linear-gradient(155deg,#B7A588,#6E5C45);"></div>
+  {% for block in section.blocks %}
+    {% assign cls = block.settings.style %}
+    <div class="promo-cell {{ cls }}" {% if block.settings.bg != blank %}style="background: {{ block.settings.bg }}"{% endif %}>
+      <div class="promo-inner wrap">
+        {% if block.settings.eyebrow != blank %}
+          <span class="eyebrow">{{ block.settings.eyebrow }}</span>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h3 class="sn">{{ block.settings.title }}</h3>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <p class="promo-desc">{{ block.settings.description }}</p>
+        {% endif %}
+        {% if block.settings.link != blank and block.settings.link_text != blank %}
+          <a href="{{ block.settings.link }}" class="sn link-arrow">{{ block.settings.link_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
 </section>
 
 {% schema %}
-{"name":"Promo grid","settings":[],"presets":[{"name":"Promo grid"}]} 
+{
+  "name": "Promo grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "promo",
+      "name": "Promo tile",
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow / small label", "default": "NEW IN" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Summer essentials" },
+        { "type": "text", "id": "description", "label": "Description", "default": "" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "link_text", "label": "Link text", "default": "Discover now →" },
+        { "type": "select", "id": "style", "label": "Background style", "default": "dark", "options": [ { "value": "dark", "label": "Signature black" }, { "value": "olive", "label": "Everyday (olive)" }, { "value": "rust", "label": "Occasion (rust)" }, { "value": "light", "label": "Light" } ] },
+        { "type": "text", "id": "bg", "label": "Custom background CSS (optional)", "default": "" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Promo grid" } ]
+}
 {% endschema %}

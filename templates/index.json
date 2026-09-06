@@ -4,14 +4,15 @@
     "strip": { "type": "strip", "settings": {} },
     "intro": { "type": "intro", "settings": {} },
     "features": { "type": "features", "settings": {} },
-    "promo_a": { "type": "promo-grid", "settings": {} },
-    "promo_b": { "type": "promo-grid", "settings": {} },
-    "promo_c": { "type": "promo-grid", "settings": {} },
-    "promo_d": { "type": "promo-grid", "settings": {} },
+    "promo_grid": { "type": "promo-grid", "settings": {}, "blocks": {
+        "promo_1": { "type": "promo", "settings": { "eyebrow": "", "title": "Signature Black", "description": "Timeless. Effortless. Essential.", "link": "/collections/signature-black", "link_text": "Shop now →", "style": "dark", "bg": "linear-gradient(90deg,#0f0b09,#2b2622)" } },
+        "promo_2": { "type": "promo", "settings": { "eyebrow": "", "title": "Everyday Wear", "description": "Open abayas & colors for every day.", "link": "/collections/everyday-wear", "link_text": "Shop now →", "style": "olive", "bg": "linear-gradient(90deg,#4a5043,#3f4236)" } },
+        "promo_3": { "type": "promo", "settings": { "eyebrow": "", "title": "Occasion Wear", "description": "Embroidered & luxury for special moments.", "link": "/collections/occasion-wear", "link_text": "Shop now →", "style": "rust", "bg": "linear-gradient(90deg,#b3502c,#7a3418)" } }
+      }, "block_order": ["promo_1","promo_2","promo_3"] },
     "story": { "type": "story", "settings": {} },
     "newsband": { "type": "newsband", "settings": {} },
     "fabrics": { "type": "fabrics", "settings": {} },
     "journal": { "type": "journal", "settings": {} }
   },
-  "order": ["hero","strip","intro","features","promo_a","promo_b","promo_c","promo_d","story","newsband","fabrics","journal"]
+  "order": ["hero","strip","intro","features","promo_grid","story","newsband","fabrics","journal"]
 }
